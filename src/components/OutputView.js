@@ -5,7 +5,7 @@ const OutputView = (props) => {
     const { personalInfo, experiences, educations } = props;
 
     return (
-        <div>
+        <div id="outputViewContainer">
             {/* <PersonalOutput personalInfo={personalInfo}></PersonalOutput> */}
             <ExperienceOutput experiences={experiences}></ExperienceOutput>
             {/* <EducationOutput educations={educations}></EducationOutput> */}

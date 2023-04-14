@@ -10,7 +10,16 @@ const ExperienceOutput = (props) => {
             {experiences?.map((experience) => {
                 return (
                     <div key={experience.id}>
-                        <Experience experienceInfo={experience}></Experience>
+                        <Experience 
+                            jobTitle={experience.jobTitle}
+                            companyName={experience.companyName}
+                            startMonth={experience.startMonth}
+                            startYear={experience.startYear}
+                            endMonth={experience.endMonth}
+                            endYear={experience.endYear}
+                            currentJob={experience.currentJob}
+                            description={experience.description}
+                        ></Experience>
                     </div>
                 );
             })}
@@ -19,12 +28,18 @@ const ExperienceOutput = (props) => {
 }
 
 const Experience = (props) => {
-    const { jobTitle, companyName, startDate, endDate, curentJob, description } = props;
+    const { jobTitle, companyName, startMonth, startYear, endMonth, endYear, currentJob, description } = props;
+
+    let dates = <p>{startMonth} {startYear} - {endMonth} {endYear}</p>;
+    if (currentJob) {
+        dates = <p>{startMonth} {startYear} - Present</p>
+    }
 
     return (
         <div>
             <h3>{jobTitle}</h3>
             {companyName}
+            {dates}
             {description}
         </div>
     )

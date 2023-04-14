@@ -2,95 +2,85 @@ import React, { Component } from "react";
 import uniqid from "uniqid";
 
 class ExperienceInput extends Component {
-  constructor(props) {
-    super(props);
-
-    this.state = {
-      experiences: [
-        {
-          jobTitle: "",
-          companyName: "",
-          startDate: "",
-          endDate: "",
-          currentJob: false,
-          description: "",
-        },
-      ],
-    };
-  }
-
-  handleChange = (e, index) => {
-    const { name, value } = e.target;
-    const experiences = [...this.state.experiences];
-    experiences[index][name] = value;
-    this.setState({ experiences });
-  };
-
-  handleAddExperience = () => {
-    const newExperience = {
-      jobTitle: "",
-      companyName: "",
-      startDate: "",
-      endDate: "",
-      currentJob: false,
-      description: "",
-    };
-    this.setState((prevState) => ({
-      experiences: [...prevState.experiences, newExperience],
-    }));
-  };
-
-  handleDeleteExperience = (index) => {
-    const experiences = [...this.state.experiences];
-    experiences.splice(index, 1);
-    this.setState({ experiences });
-  };
-
   render() {
-    const { experiences } = this.state;
+    const { experiences, addExperience, changeExperience, handleDeleteExperience } = this.props;
 
     return (
       <div>
         <h2>Experiences</h2>
-        {experiences.map((experience, index) => {
+        {experiences?.map((experience, index) => {
           return (
-            <div key={index}>
-              <Experience
-                index={index}
-                jobTitle={experience.jobTitle}
-                companyName={experience.companyName}
-                startDate={experience.startDate}
-                endDate={experience.endDate}
-                currentJob={experience.currentJob}
-                description={experience.description}
-                handleChange={this.handleChange}
+            <div key={experience.id}>
+              <label htmlFor="jobTitle">Job Title</label>
+              <input
+                  onChange={(e) => changeExperience(e, experience.id)}
+                  // value={experience.jobTitle}
+                  type="text"
+                  id="jobTitle"
+                  name="jobTitle"
+                  placeholder="Job Title"
               />
-              <button onClick={() => this.handleDeleteExperience(index)}>Delete</button>
+              <label htmlFor="companyName">Company Name</label>
+              <input
+                onChange={(e) => changeExperience(e,experience.id)}
+                type="text"
+                id="companyName"
+                name="companyName"
+                placeholder="Company Name"
+              />
+              <label htmlFor="startMonth">Start month</label>
+              <input
+                onChange={(e) => changeExperience(e,experience.id)}
+                type="text"
+                id="startMonth"
+                name="startMonth"
+                placeholder="Start month"
+              />
+              <label htmlFor="startYear">Start year</label>
+              <input
+                onChange={(e) => changeExperience(e,experience.id)}
+                type="number"
+                id="startYear"
+                name="startYear"
+                placeholder="Start year"
+              />
+              <label htmlFor="endMonth">End month</label>
+              <input
+                onChange={(e) => changeExperience(e,experience.id)}
+                type="text"
+                id="endMonth"
+                name="endMonth"
+                placeholder="End month"
+              />
+              <label htmlFor="endYear">End year</label>
+              <input
+                onChange={(e) => changeExperience(e,experience.id)}
+                type="number"
+                id="endYear"
+                name="endYear"
+                placeholder="End year"
+              />
+              <label htmlFor="currentJob">Current Job</label>
+              <input
+                onChange={(e) => changeExperience(e,experience.id)}
+                type="checkbox"
+                id="currentJob"
+                name="currentJob"
+              />
+              <textarea
+                onChange={(e) => changeExperience(e,experience.id)}
+                id="description"
+                name="description"
+                placeholder="Description of job and accomplishments"
+              />
+              <button onClick={() => handleDeleteExperience(index)}>Delete</button>
             </div>
           );
         })}
-        <button onClick={this.handleAddExperience}>Add</button>
+        <button onClick={addExperience}>Add</button>
       </div>
     );
   }
 }
-
-const Experience = (props) => {
-    const { jobTitle, companyName, startDate, endDate, currentJob, description } = props;
-
-    return (
-        <div>
-        <label htmlFor="jobTitle">Job Title</label>
-        <input
-            onChange={(e) => props.handleChange(e, props.index)}
-            value={jobTitle}
-            type="text"
-            id="jobTitle"
-            name="jobTitle"
-        />
-        {/* add inputs for companyName, startDate, endDate, currentJob, and description here */}
-        </div>
-    );
-};
 
 export default ExperienceInput;
