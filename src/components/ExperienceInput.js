@@ -31,35 +31,35 @@ class ExperienceInput extends Component {
               <label htmlFor="startMonth">Start month</label>
               <input
                 onChange={(e) => changeExperience(e,experience.id)}
-                type="text"
+                type="month"
                 id="startMonth"
                 name="startMonth"
                 placeholder="Start month"
               />
-              <label htmlFor="startYear">Start year</label>
+              {/* <label htmlFor="startYear">Start year</label>
               <input
                 onChange={(e) => changeExperience(e,experience.id)}
                 type="number"
                 id="startYear"
                 name="startYear"
                 placeholder="Start year"
-              />
+              /> */}
               <label htmlFor="endMonth">End month</label>
               <input
                 onChange={(e) => changeExperience(e,experience.id)}
-                type="text"
+                type="month"
                 id="endMonth"
                 name="endMonth"
                 placeholder="End month"
               />
-              <label htmlFor="endYear">End year</label>
+              {/* <label htmlFor="endYear">End year</label>
               <input
                 onChange={(e) => changeExperience(e,experience.id)}
                 type="number"
                 id="endYear"
                 name="endYear"
                 placeholder="End year"
-              />
+              /> */}
               <label htmlFor="currentJob">Current Job</label>
               <input
                 onChange={(e) => changeExperience(e,experience.id)}

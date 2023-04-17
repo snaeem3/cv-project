@@ -1,5 +1,6 @@
 import React from "react";
 import ExperienceOutput from "./ExperienceOutput";
+import EducationOutput from "./EducationOutput";
 
 const OutputView = (props) => {
     const { personalInfo, experiences, educations } = props;
@@ -8,7 +9,7 @@ const OutputView = (props) => {
         <div id="outputViewContainer">
             {/* <PersonalOutput personalInfo={personalInfo}></PersonalOutput> */}
             <ExperienceOutput experiences={experiences}></ExperienceOutput>
-            {/* <EducationOutput educations={educations}></EducationOutput> */}
+            <EducationOutput educations={educations}></EducationOutput>
         </div>
     );
 }

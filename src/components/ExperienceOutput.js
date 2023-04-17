@@ -30,9 +30,17 @@ const ExperienceOutput = (props) => {
 const Experience = (props) => {
     const { jobTitle, companyName, startMonth, startYear, endMonth, endYear, currentJob, description } = props;
 
-    let dates = <p>{startMonth} {startYear} - {endMonth} {endYear}</p>;
+    const [yearStart, monthStart] = startMonth.split('-');
+    const dateStart = new Date(yearStart, monthStart - 1, 1);
+    const [yearEnd, monthEnd] = endMonth.split('-');
+    const dateEnd = new Date(yearEnd, monthEnd - 1, 1);
+    const options = { month: 'long', year: 'numeric' };
+    const formattedDateStart = dateStart.toLocaleDateString('en-US', options);
+    const formattedDateEnd = dateEnd.toLocaleDateString('en-US', options);
+
+    let dates = <p>{formattedDateStart} - {formattedDateEnd}</p>;
     if (currentJob) {
-        dates = <p>{startMonth} {startYear} - Present</p>
+        dates = <p>{formattedDateStart} - Present</p>
     }
 
     return (
@@ -40,9 +48,21 @@ const Experience = (props) => {
             <h3>{jobTitle}</h3>
             {companyName}
             {dates}
-            {description}
+            <TextAreaWithBullets value={description} />
         </div>
     )
 }
+
+const TextAreaWithBullets = ({ value }) => {
+    const lines = value.split('\n');
+  
+    return (
+      <ul>
+        {lines.map((line, index) => (
+          <li key={index}>{line}</li>
+        ))}
+      </ul>
+    );
+  };
 
 export default ExperienceOutput;

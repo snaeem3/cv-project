@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import ExperienceInput from './ExperienceInput';
+import EducationInput from './EducationInput';
 
 class InputForm extends Component {
   render() {
@@ -12,6 +13,12 @@ class InputForm extends Component {
           addExperience={addExperience}
           changeExperience={changeExperience}
           handleDeleteExperience={handleDeleteExperience}
+        />
+        <EducationInput
+          educations={educations}
+          addEducation={addEducation}
+          changeEducation={changeEducation}
+          handleDeleteEducation={handleDeleteEducation}
         />
       </div>
     );
