@@ -10,10 +10,23 @@ class App extends Component {
     super(props);
 
     this.state = {
+      personal: {
+        firstName: '',
+        lastName: '',
+        email: '',
+        phone: '',
+        location: '',
+      },
       experiences: [],
       educations: [],
     };
   }
+
+  changePersonal = (event) => {
+    const personal = { ...this.state.personal };
+    personal[event.target.name] = event.target.value;
+    this.setState({ personal });
+  };
 
   addExperience = () => {
     const experience = {
@@ -92,11 +105,13 @@ class App extends Component {
   };
 
   render() {
-    const { experiences, educations } = this.state;
+    const { personal, experiences, educations } = this.state;
 
     return (
       <div>
         <InputForm
+          personal={personal}
+          changePersonal={this.changePersonal}
           experiences={experiences}
           educations={educations}
           addExperience={this.addExperience}
@@ -106,7 +121,11 @@ class App extends Component {
           changeEducation={this.changeEducation}
           handleDeleteEducation={this.handleDeleteEducation}
         />
-        <OutputView experiences={experiences} educations={educations} />
+        <OutputView
+          personal={personal}
+          experiences={experiences}
+          educations={educations}
+        />
       </div>
     );
   }

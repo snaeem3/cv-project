@@ -71,6 +71,7 @@ class ExperienceInput extends Component {
               id="currentJob"
               name="currentJob"
             />
+            <label htmlFor="description">Accomplishments</label>
             <textarea
               onChange={(e) => changeExperience(e, experience.id)}
               id="description"
@@ -82,7 +83,9 @@ class ExperienceInput extends Component {
             </button>
           </div>
         ))}
-        <button onClick={addExperience}>Add</button type="button">
+        <button onClick={addExperience} type="button">
+          Add
+        </button>
       </div>
     );
   }

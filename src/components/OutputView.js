@@ -1,13 +1,14 @@
 import React from 'react';
 import ExperienceOutput from './ExperienceOutput';
 import EducationOutput from './EducationOutput';
+import PersonalOutput from './PersonalOutput';
 
 const OutputView = (props) => {
-  const { personalInfo, experiences, educations } = props;
+  const { personal, experiences, educations } = props;
 
   return (
-    <div id="outputViewContainer">
-      {/* <PersonalOutput personalInfo={personalInfo}></PersonalOutput> */}
+    <div id="output-container">
+      <PersonalOutput personal={personal} />
       <ExperienceOutput experiences={experiences} />
       <EducationOutput educations={educations} />
     </div>

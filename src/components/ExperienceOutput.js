@@ -41,7 +41,7 @@ const Experience = (props) => {
   const dateStart = new Date(yearStart, monthStart - 1, 1);
   const [yearEnd, monthEnd] = endMonth.split('-');
   const dateEnd = new Date(yearEnd, monthEnd - 1, 1);
-  const options = { month: 'long', year: 'numeric' };
+  const options = { month: 'short', year: 'numeric' };
   const formattedDateStart = dateStart.toLocaleDateString('en-US', options);
   const formattedDateEnd = dateEnd.toLocaleDateString('en-US', options);
 

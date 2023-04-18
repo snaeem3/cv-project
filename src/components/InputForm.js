@@ -1,10 +1,13 @@
 import React, { Component } from 'react';
 import ExperienceInput from './ExperienceInput';
 import EducationInput from './EducationInput';
+import PersonalInput from './PersonalInput';
 
 class InputForm extends Component {
   render() {
     const {
+      personal,
+      changePersonal,
       experiences,
       educations,
       addExperience,
@@ -17,6 +20,7 @@ class InputForm extends Component {
 
     return (
       <div className="form" id="input-form">
+        <PersonalInput personal={personal} changePersonal={changePersonal} />
         <ExperienceInput
           experiences={experiences}
           addExperience={addExperience}
