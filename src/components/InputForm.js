@@ -4,7 +4,16 @@ import EducationInput from './EducationInput';
 
 class InputForm extends Component {
   render() {
-    const { experiences, educations, addExperience, changeExperience, handleDeleteExperience, addEducation, changeEducation, handleDeleteEducation } = this.props;
+    const {
+      experiences,
+      educations,
+      addExperience,
+      changeExperience,
+      handleDeleteExperience,
+      addEducation,
+      changeEducation,
+      handleDeleteEducation,
+    } = this.props;
 
     return (
       <div className="form" id="input-form">
