@@ -7,10 +7,10 @@ class EducationInput extends Component {
       this.props;
 
     return (
-      <div id="education-input-container">
+      <section id="education-input-container" className="input-container">
         <h2>Education</h2>
         {educations?.map((education, index) => (
-          <div key={education.id}>
+          <div key={education.id} className="input-container">
             <label htmlFor="schoolName">School/University</label>
             <input
               onChange={(e) => changeEducation(e, education.id)}
@@ -18,6 +18,14 @@ class EducationInput extends Component {
               id="schoolName"
               name="schoolName"
               placeholder="School/University Name"
+            />
+            <label htmlFor="program">Program or Major</label>
+            <input
+              onChange={(e) => changeEducation(e, education.id)}
+              type="text"
+              id="program"
+              name="program"
+              placeholder="Degree in Major"
             />
             <label htmlFor="startMonth">Start month</label>
             <input
@@ -41,7 +49,7 @@ class EducationInput extends Component {
         <button onClick={addEducation} type="button">
           Add
         </button>
-      </div>
+      </section>
     );
   }
 }

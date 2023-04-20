@@ -1,0 +1,135 @@
+@import url("https://fonts.googleapis.com/css2?family=IBM+Plex+Mono&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Libre+Baskerville&display=swap");
+
+:root {
+  --section-padding: 1rem;
+  --section-margin: 1rem;
+  --border-radius-default: 0.75rem;
+  --primary-color: #82b4ff;
+  --primary-color-dark: #46618a;
+  --shade-color: #494949da;
+  --color-shadow: grey;
+}
+
+*,
+*::before,
+*::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  /* font-family: "IBM Plex Mono", monospace; */
+}
+
+button,
+input,
+select,
+textarea {
+  font-family: inherit;
+  font-size: 100%;
+}
+
+button {
+  background-color: var(--primary-color);
+  color: rgba(255, 255, 255, 0.5);
+  border: none;
+  /* border-radius: 32px; */
+  padding: var(--section-padding) calc(var(--section-padding) * 2);
+  text-decoration: none;
+  font-size: 1.5rem;
+  transition-duration: 0.2s;
+}
+
+button:not(:disabled),
+input:not(:disabled),
+input:not(:disabled) + label,
+a {
+  cursor: pointer;
+}
+
+.icon:hover {
+  cursor: pointer;
+}
+
+button:not(:disabled):hover {
+  background-color: var(--primary-color-dark);
+}
+
+.box-shadow {
+  box-shadow: 2px 5px 5px var(--color-shadow);
+}
+
+.icon {
+  vertical-align: bottom;
+}
+
+ul {
+  list-style-position: inside;
+}
+
+body {
+  /* margin: 0; */
+  /* font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
+    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
+    sans-serif; */
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+code {
+  font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
+    monospace;
+}
+
+main {
+  display: flex;
+  flex-direction: column;
+  /* justify-content: space-around; */
+}
+
+.date-block {
+  display: flex;
+  justify-content: space-between;
+}
+
+.dates {
+  /* text-align: right; */
+}
+
+#input-form {
+  font-family: "IBM Plex Mono", monospace;
+}
+
+.input-container {
+  display: flex;
+  flex-direction: column;
+}
+
+#output-container {
+  font-family: "Libre Baskerville", serif;
+  aspect-ratio: 9/16;
+  border: solid 2px black;
+  margin: var(--section-margin);
+  padding: var(--section-padding);
+}
+
+.name {
+  text-transform: uppercase;
+}
+
+.section-header {
+  border-bottom: solid 2px black;
+}
+
+#personal-output-container {
+  text-align: center;
+}
+
+@media (min-width: 780px) {
+  main {
+    flex-direction: row;
+  }
+
+  .pop-up {
+    width: 40%;
+  }
+}

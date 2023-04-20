@@ -11,10 +11,18 @@ class ExperienceInput extends Component {
     } = this.props;
 
     return (
-      <div>
+      <section className="input-container">
         <h2>Experiences</h2>
         {experiences?.map((experience, index) => (
-          <div key={experience.id}>
+          <div key={experience.id} className="input-container">
+            <label htmlFor="companyName">Company Name</label>
+            <input
+              onChange={(e) => changeExperience(e, experience.id)}
+              type="text"
+              id="companyName"
+              name="companyName"
+              placeholder="Company Name"
+            />
             <label htmlFor="jobTitle">Job Title</label>
             <input
               onChange={(e) => changeExperience(e, experience.id)}
@@ -23,14 +31,6 @@ class ExperienceInput extends Component {
               id="jobTitle"
               name="jobTitle"
               placeholder="Job Title"
-            />
-            <label htmlFor="companyName">Company Name</label>
-            <input
-              onChange={(e) => changeExperience(e, experience.id)}
-              type="text"
-              id="companyName"
-              name="companyName"
-              placeholder="Company Name"
             />
             <label htmlFor="startMonth">Start month</label>
             <input
@@ -86,7 +86,7 @@ class ExperienceInput extends Component {
         <button onClick={addExperience} type="button">
           Add
         </button>
-      </div>
+      </section>
     );
   }
 }

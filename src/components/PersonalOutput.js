@@ -5,9 +5,12 @@ const PersonalOutput = (props) => {
 
   return (
     <div id="personal-output-container" className="output">
-      {`${personal.firstName} ${personal.lastName}`}
+      <h2 className="name">{`${personal.firstName} ${personal.lastName}`}</h2>
+      {/* <br /> */}
       {personal.email}
+      <br />
       {personal.phone}
+      <br />
       {personal.location}
     </div>
   );

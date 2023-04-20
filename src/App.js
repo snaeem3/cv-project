@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import uniqid from 'uniqid';
 import logo from './logo.svg';
-import './App.css';
+// import './App.css';
 import InputForm from './components/InputForm';
 import OutputView from './components/OutputView';
 
@@ -76,7 +76,7 @@ class App extends Component {
     const education = {
       id: uniqid(),
       schoolName: '',
-      major: '',
+      program: '',
       startMonth: '',
       endMonth: '',
     };
@@ -109,23 +109,25 @@ class App extends Component {
 
     return (
       <div>
-        <InputForm
-          personal={personal}
-          changePersonal={this.changePersonal}
-          experiences={experiences}
-          educations={educations}
-          addExperience={this.addExperience}
-          changeExperience={this.changeExperience}
-          handleDeleteExperience={this.handleDeleteExperience}
-          addEducation={this.addEducation}
-          changeEducation={this.changeEducation}
-          handleDeleteEducation={this.handleDeleteEducation}
-        />
-        <OutputView
-          personal={personal}
-          experiences={experiences}
-          educations={educations}
-        />
+        <main>
+          <InputForm
+            personal={personal}
+            changePersonal={this.changePersonal}
+            experiences={experiences}
+            educations={educations}
+            addExperience={this.addExperience}
+            changeExperience={this.changeExperience}
+            handleDeleteExperience={this.handleDeleteExperience}
+            addEducation={this.addEducation}
+            changeEducation={this.changeEducation}
+            handleDeleteEducation={this.handleDeleteEducation}
+          />
+          <OutputView
+            personal={personal}
+            experiences={experiences}
+            educations={educations}
+          />
+        </main>
       </div>
     );
   }

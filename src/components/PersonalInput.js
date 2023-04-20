@@ -5,7 +5,7 @@ class PersonalInput extends Component {
     const { personal, changePersonal } = this.props;
 
     return (
-      <div id="personal-input-container" className="input">
+      <section id="personal-input-container" className="input-container">
         <h2>Personal Details</h2>
         <label htmlFor="firstName">First Name</label>
         <input
@@ -47,7 +47,7 @@ class PersonalInput extends Component {
           name="location"
           placeholder="City, State"
         />
-      </div>
+      </section>
     );
   }
 }

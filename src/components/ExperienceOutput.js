@@ -6,16 +6,14 @@ const ExperienceOutput = (props) => {
 
   return (
     <div>
-      <h2>Work Experience</h2>
+      <h2 className="section-header">WORK EXPERIENCE</h2>
       {experiences?.map((experience) => (
         <div key={experience.id}>
           <Experience
             jobTitle={experience.jobTitle}
             companyName={experience.companyName}
             startMonth={experience.startMonth}
-            startYear={experience.startYear}
             endMonth={experience.endMonth}
-            endYear={experience.endYear}
             currentJob={experience.currentJob}
             description={experience.description}
           />
@@ -46,19 +44,21 @@ const Experience = (props) => {
   const formattedDateEnd = dateEnd.toLocaleDateString('en-US', options);
 
   let dates = (
-    <p>
+    <p className="dates">
       {formattedDateStart} - {formattedDateEnd}
     </p>
   );
   if (currentJob) {
-    dates = <p>{formattedDateStart} - Present</p>;
+    dates = <p className="dates">{formattedDateStart} - Present</p>;
   }
 
   return (
     <div>
-      <h3>{jobTitle}</h3>
-      {companyName}
-      {dates}
+      <div className="date-block">
+        <h3>{companyName}</h3>
+        {dates}
+      </div>
+      <i>{jobTitle}</i>
       <TextAreaWithBullets value={description} />
     </div>
   );

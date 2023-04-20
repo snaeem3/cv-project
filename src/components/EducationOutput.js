@@ -5,11 +5,12 @@ const EducationOutput = (props) => {
 
   return (
     <div id="education-output-container">
-      <h2>Education</h2>
+      <h2 className="section-header">EDUCATION</h2>
       {educations?.map((education) => (
         <div key={education.id}>
           <Education
             schoolName={education.schoolName}
+            program={education.program}
             startMonth={education.startMonth}
             endMonth={education.endMonth}
           />
@@ -20,7 +21,7 @@ const EducationOutput = (props) => {
 };
 
 const Education = (props) => {
-  const { schoolName, startMonth, endMonth } = props;
+  const { schoolName, program, startMonth, endMonth } = props;
 
   console.log(startMonth);
   console.log(endMonth);
@@ -34,7 +35,7 @@ const Education = (props) => {
   const formattedDateEnd = dateEnd.toLocaleDateString('en-US', options);
 
   const dates = (
-    <p>
+    <p className="dates">
       {formattedDateStart} - {formattedDateEnd}
     </p>
   );
@@ -42,6 +43,7 @@ const Education = (props) => {
   return (
     <div>
       {schoolName}
+      {program}
       {dates}
     </div>
   );
