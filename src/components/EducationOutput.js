@@ -42,9 +42,11 @@ const Education = (props) => {
 
   return (
     <div>
-      {schoolName}
-      {program}
-      {dates}
+      <div className="date-block">
+        <h3>{schoolName}</h3>
+        {dates}
+      </div>
+      <i>{program}</i>
     </div>
   );
 };

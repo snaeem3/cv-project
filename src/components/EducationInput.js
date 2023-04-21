@@ -14,6 +14,7 @@ class EducationInput extends Component {
             <label htmlFor="schoolName">School/University</label>
             <input
               onChange={(e) => changeEducation(e, education.id)}
+              value={education.schoolName}
               type="text"
               id="schoolName"
               name="schoolName"
@@ -22,6 +23,7 @@ class EducationInput extends Component {
             <label htmlFor="program">Program or Major</label>
             <input
               onChange={(e) => changeEducation(e, education.id)}
+              value={education.program}
               type="text"
               id="program"
               name="program"
@@ -30,6 +32,7 @@ class EducationInput extends Component {
             <label htmlFor="startMonth">Start month</label>
             <input
               onChange={(e) => changeEducation(e, education.id)}
+              value={education.startMonth}
               type="month"
               id="startMonth"
               name="startMonth"
@@ -37,6 +40,7 @@ class EducationInput extends Component {
             <label htmlFor="endMonth">End month</label>
             <input
               onChange={(e) => changeEducation(e, education.id)}
+              value={education.endMonth}
               type="month"
               id="endMonth"
               name="endMonth"

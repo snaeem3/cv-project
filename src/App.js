@@ -104,30 +104,58 @@ class App extends Component {
     });
   };
 
-  handlePrint = () => {
-    const printableElement = document.getElementById('output-container');
-    const styles = window.getComputedStyle(printableElement);
-    const printContents = printableElement.outerHTML;
-    const printWindow = window.open(
-      '',
-      'PrintWindow',
-      'width=750,height=650,top=50,left=50,toolbars=no,scrollbars=yes,status=no,resizable=yes'
-    );
-    printWindow.document.write(`
-      <html>
-        <head>
-          <title>Print</title>
-          <style>
-            ${document.head.innerHTML}
-          </style>
-        </head>
-        <body>
-          ${printContents}
-        </body>
-      </html>
-    `);
-    printWindow.document.close();
-    printWindow.print();
+  reset = () => {
+    this.setState({
+      personal: {
+        firstName: '',
+        lastName: '',
+        email: '',
+        phone: '',
+        location: '',
+      },
+      experiences: [],
+      educations: [],
+    });
+  };
+
+  handleSample = () => {
+    const toyMakerDescription =
+      'Design and produce a wide range of toys including dolls, stuffed animals, board games, and puzzles' +
+      '\n' +
+      'Use a variety of tools and equipment such as saws, drills, sanders, and sewing machines' +
+      '\n' +
+      'Collaborate with other elves and the workshop supervisor to meet production deadlines' +
+      '\n' +
+      'Conduct quality checks on toys to ensure they meet North Pole standards' +
+      '\n' +
+      'Participate in the annual Christmas Eve delivery process, ensuring each child receives their desired gifts';
+    this.setState({
+      personal: {
+        firstName: 'Eric',
+        lastName: 'Elf',
+        email: 'erictheelf@northpole.com',
+        phone: '123-456-7890',
+        location: 'North Pole, Arctic Circle',
+      },
+      experiences: [
+        {
+          jobTitle: 'Toy Maker',
+          companyName: 'North Pole Workshop',
+          startMonth: '2000-01',
+          endMonth: '2020-02',
+          currentJob: true,
+          description: toyMakerDescription,
+        },
+      ],
+      educations: [
+        {
+          schoolName: 'Elf School',
+          program: 'B.S. in Toy Manufacturing',
+          startMonth: '1996-08',
+          endMonth: '1999-05',
+        },
+      ],
+    });
   };
 
   render() {
@@ -137,8 +165,14 @@ class App extends Component {
       <div>
         <header>
           <title>CV Maker</title>
-          <button id="print-btn" type="button" onClick={this.handlePrint}>
+          <button id="print-btn" type="button" onClick={handlePrint}>
             Print
+          </button>
+          <button id="reset-btn" type="button" onClick={this.reset}>
+            Reset
+          </button>
+          <button id="sample-btn" type="button" onClick={this.handleSample}>
+            Sample
           </button>
         </header>
         <main>
@@ -163,6 +197,32 @@ class App extends Component {
       </div>
     );
   }
+}
+
+function handlePrint() {
+  const printableElement = document.getElementById('output-container');
+  const styles = window.getComputedStyle(printableElement);
+  const printContents = printableElement.outerHTML;
+  const printWindow = window.open(
+    '',
+    'PrintWindow',
+    'width=750,height=650,top=50,left=50,toolbars=no,scrollbars=yes,status=no,resizable=yes'
+  );
+  printWindow.document.write(`
+    <html>
+      <head>
+        <title>Print</title>
+        <style>
+          ${document.head.innerHTML}
+        </style>
+      </head>
+      <body>
+        ${printContents}
+      </body>
+    </html>
+  `);
+  printWindow.document.close();
+  printWindow.print();
 }
 
 export default App;

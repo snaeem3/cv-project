@@ -10,6 +10,7 @@ class PersonalInput extends Component {
         <label htmlFor="firstName">First Name</label>
         <input
           onChange={(e) => changePersonal(e)}
+          value={personal.firstName}
           type="text"
           id="firstName"
           name="firstName"
@@ -18,6 +19,7 @@ class PersonalInput extends Component {
         <label htmlFor="lastName">Last Name</label>
         <input
           onChange={(e) => changePersonal(e)}
+          value={personal.lastName}
           type="text"
           id="lastName"
           name="lastName"
@@ -26,6 +28,7 @@ class PersonalInput extends Component {
         <label htmlFor="email">Email Address</label>
         <input
           onChange={(e) => changePersonal(e)}
+          value={personal.email}
           type="email"
           id="email"
           name="email"
@@ -34,6 +37,7 @@ class PersonalInput extends Component {
         <label htmlFor="phone">Phone Number</label>
         <input
           onChange={(e) => changePersonal(e)}
+          value={personal.phone}
           type="tel"
           id="phone"
           name="phone"
@@ -42,6 +46,7 @@ class PersonalInput extends Component {
         <label htmlFor="location">Location</label>
         <input
           onChange={(e) => changePersonal(e)}
+          value={personal.location}
           type="text"
           id="location"
           name="location"

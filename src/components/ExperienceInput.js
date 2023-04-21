@@ -18,6 +18,7 @@ class ExperienceInput extends Component {
             <label htmlFor="companyName">Company Name</label>
             <input
               onChange={(e) => changeExperience(e, experience.id)}
+              value={experience.companyName}
               type="text"
               id="companyName"
               name="companyName"
@@ -26,7 +27,7 @@ class ExperienceInput extends Component {
             <label htmlFor="jobTitle">Job Title</label>
             <input
               onChange={(e) => changeExperience(e, experience.id)}
-              // value={experience.jobTitle}
+              value={experience.jobTitle}
               type="text"
               id="jobTitle"
               name="jobTitle"
@@ -35,6 +36,7 @@ class ExperienceInput extends Component {
             <label htmlFor="startMonth">Start month</label>
             <input
               onChange={(e) => changeExperience(e, experience.id)}
+              value={experience.startMonth}
               type="month"
               id="startMonth"
               name="startMonth"
@@ -51,6 +53,7 @@ class ExperienceInput extends Component {
             <label htmlFor="endMonth">End month</label>
             <input
               onChange={(e) => changeExperience(e, experience.id)}
+              value={experience.endMonth}
               type="month"
               id="endMonth"
               name="endMonth"
@@ -67,6 +70,7 @@ class ExperienceInput extends Component {
             <label htmlFor="currentJob">Current Job</label>
             <input
               onChange={(e) => changeExperience(e, experience.id)}
+              checked={experience.currentJob}
               type="checkbox"
               id="currentJob"
               name="currentJob"
@@ -74,6 +78,7 @@ class ExperienceInput extends Component {
             <label htmlFor="description">Accomplishments</label>
             <textarea
               onChange={(e) => changeExperience(e, experience.id)}
+              value={experience.description}
               id="description"
               name="description"
               placeholder="Description of job and accomplishments"
