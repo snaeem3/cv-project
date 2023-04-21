@@ -7,7 +7,7 @@ const OutputView = (props) => {
   const { personal, experiences, educations } = props;
 
   return (
-    <div id="output-container" className="portrait">
+    <div id="output-container" className="portrait sticky printable-element">
       <PersonalOutput personal={personal} />
       <ExperienceOutput experiences={experiences} />
       <EducationOutput educations={educations} />

@@ -104,11 +104,43 @@ class App extends Component {
     });
   };
 
+  handlePrint = () => {
+    const printableElement = document.getElementById('output-container');
+    const styles = window.getComputedStyle(printableElement);
+    const printContents = printableElement.outerHTML;
+    const printWindow = window.open(
+      '',
+      'PrintWindow',
+      'width=750,height=650,top=50,left=50,toolbars=no,scrollbars=yes,status=no,resizable=yes'
+    );
+    printWindow.document.write(`
+      <html>
+        <head>
+          <title>Print</title>
+          <style>
+            ${document.head.innerHTML}
+          </style>
+        </head>
+        <body>
+          ${printContents}
+        </body>
+      </html>
+    `);
+    printWindow.document.close();
+    printWindow.print();
+  };
+
   render() {
     const { personal, experiences, educations } = this.state;
 
     return (
       <div>
+        <header>
+          <title>CV Maker</title>
+          <button id="print-btn" type="button" onClick={this.handlePrint}>
+            Print
+          </button>
+        </header>
         <main>
           <InputForm
             personal={personal}
