@@ -12,7 +12,7 @@ class ExperienceInput extends Component {
 
     return (
       <section className="input-container">
-        <h2>Experiences</h2>
+        <h2 className="section-header">Experiences</h2>
         {experiences?.map((experience, index) => (
           <div key={experience.id} className="input-container">
             <label htmlFor="companyName">Company Name</label>
@@ -83,13 +83,17 @@ class ExperienceInput extends Component {
               name="description"
               placeholder="Description of job and accomplishments"
             />
-            <button onClick={() => handleDeleteExperience(index)} type="button">
+            <button
+              onClick={() => handleDeleteExperience(index)}
+              type="button"
+              className="delete"
+            >
               Delete
             </button>
           </div>
         ))}
         <button onClick={addExperience} type="button">
-          Add
+          Add Experience
         </button>
       </section>
     );

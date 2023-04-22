@@ -164,15 +164,15 @@ class App extends Component {
     return (
       <div>
         <header>
-          <title>CV Maker</title>
-          <button id="print-btn" type="button" onClick={handlePrint}>
-            Print
+          <h1 id="app-title">CV Maker</h1>
+          <button id="sample-btn" type="button" onClick={this.handleSample}>
+            Sample
           </button>
           <button id="reset-btn" type="button" onClick={this.reset}>
             Reset
           </button>
-          <button id="sample-btn" type="button" onClick={this.handleSample}>
-            Sample
+          <button id="print-btn" type="button" onClick={handlePrint}>
+            Print
           </button>
         </header>
         <main>

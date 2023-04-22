@@ -8,7 +8,7 @@ class EducationInput extends Component {
 
     return (
       <section id="education-input-container" className="input-container">
-        <h2>Education</h2>
+        <h2 className="section-header">Education</h2>
         {educations?.map((education, index) => (
           <div key={education.id} className="input-container">
             <label htmlFor="schoolName">School/University</label>
@@ -45,13 +45,17 @@ class EducationInput extends Component {
               id="endMonth"
               name="endMonth"
             />
-            <button onClick={() => handleDeleteEducation(index)} type="button">
+            <button
+              onClick={() => handleDeleteEducation(index)}
+              type="button"
+              className="delete"
+            >
               Delete
             </button>
           </div>
         ))}
         <button onClick={addEducation} type="button">
-          Add
+          Add Education
         </button>
       </section>
     );

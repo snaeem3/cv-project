@@ -5,7 +5,7 @@ const ExperienceOutput = (props) => {
   const { experiences } = props;
 
   return (
-    <div>
+    <section className="output-section">
       <h2 className="section-header">WORK EXPERIENCE</h2>
       {experiences?.map((experience) => (
         <div key={experience.id}>
@@ -19,7 +19,7 @@ const ExperienceOutput = (props) => {
           />
         </div>
       ))}
-    </div>
+    </section>
   );
 };
 

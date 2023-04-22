@@ -4,7 +4,7 @@ const EducationOutput = (props) => {
   const { educations } = props;
 
   return (
-    <div id="education-output-container">
+    <section id="education-output-container" className="output-section">
       <h2 className="section-header">EDUCATION</h2>
       {educations?.map((education) => (
         <div key={education.id}>
@@ -16,15 +16,12 @@ const EducationOutput = (props) => {
           />
         </div>
       ))}
-    </div>
+    </section>
   );
 };
 
 const Education = (props) => {
   const { schoolName, program, startMonth, endMonth } = props;
-
-  console.log(startMonth);
-  console.log(endMonth);
 
   const [yearStart, monthStart] = startMonth.split('-');
   const dateStart = new Date(yearStart, monthStart - 1, 1);

@@ -7,11 +7,7 @@ const PersonalOutput = (props) => {
     <div id="personal-output-container" className="output">
       <h2 className="name">{`${personal.firstName} ${personal.lastName}`}</h2>
       {/* <br /> */}
-      {personal.email}
-      <br />
-      {personal.phone}
-      <br />
-      {personal.location}
+      {personal.email} | {personal.phone} | {personal.location}
     </div>
   );
 };
