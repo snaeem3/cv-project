@@ -92,7 +92,7 @@ class ExperienceInput extends Component {
             </button>
           </div>
         ))}
-        <button onClick={addExperience} type="button">
+        <button onClick={addExperience} type="button" className="add-btn">
           Add Experience
         </button>
       </section>

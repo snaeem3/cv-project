@@ -54,7 +54,7 @@ class EducationInput extends Component {
             </button>
           </div>
         ))}
-        <button onClick={addEducation} type="button">
+        <button onClick={addEducation} type="button" className="add-btn">
           Add Education
         </button>
       </section>
