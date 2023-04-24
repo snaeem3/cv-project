@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import { Helmet } from 'react-helmet';
 import uniqid from 'uniqid';
 import logo from './logo.svg';
 // import './App.css';
@@ -175,6 +176,9 @@ class App extends Component {
 
     return (
       <div>
+        <Helmet>
+          <title>CV Maker</title>
+        </Helmet>
         <header>
           <h1 id="app-title">CV Maker</h1>
           <button id="sample-btn" type="button" onClick={this.handleSample}>
