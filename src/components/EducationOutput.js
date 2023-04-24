@@ -7,14 +7,12 @@ const EducationOutput = (props) => {
     <section id="education-output-container" className="output-section">
       <h2 className="section-header">EDUCATION</h2>
       {educations?.map((education) => (
-        <div key={education.id}>
-          <Education
-            schoolName={education.schoolName}
-            program={education.program}
-            startMonth={education.startMonth}
-            endMonth={education.endMonth}
-          />
-        </div>
+        <Education
+          schoolName={education.schoolName}
+          program={education.program}
+          startMonth={education.startMonth}
+          endMonth={education.endMonth}
+        />
       ))}
     </section>
   );
@@ -38,7 +36,7 @@ const Education = (props) => {
   );
 
   return (
-    <div>
+    <div className="education-container">
       <div className="date-block">
         <h3>{schoolName}</h3>
         {dates}

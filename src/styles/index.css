@@ -48,7 +48,7 @@ a {
   cursor: pointer;
 }
 
-.icon:hover {
+.clickable:hover {
   cursor: pointer;
 }
 
@@ -98,6 +98,19 @@ header button {
   margin: var(--section-margin);
 }
 
+#print-btn::after {
+  content: "";
+  background-image: url(/src/images/printer.svg);
+  background-repeat: no-repeat;
+  background-size: 1.5rem 1.5rem;
+  width: 1.5rem;
+  height: 1.5rem;
+  display: inline-flex;
+  align-items: center;
+  vertical-align: super;
+  margin-left: 0.5rem;
+}
+
 title {
   font-size: 3rem;
 }
@@ -113,10 +126,6 @@ main {
 .date-block {
   display: flex;
   justify-content: space-between;
-}
-
-.dates {
-  /* text-align: right; */
 }
 
 section {
@@ -177,19 +186,6 @@ textarea {
   align-items: center;
 }
 
-#print-btn::after {
-  content: "";
-  background-image: url(/src/images/printer.svg);
-  background-repeat: no-repeat;
-  background-size: 1.5rem 1.5rem;
-  width: 1.5rem;
-  height: 1.5rem;
-  display: inline-flex;
-  align-items: center;
-  vertical-align: super;
-  margin-left: 0.5rem;
-}
-
 .delete {
   background: rgb(255, 28, 28);
 }
@@ -245,6 +241,11 @@ button.delete:not(:disabled):hover {
   align-items: center;
   justify-content: center;
   gap: 0.5rem;
+}
+
+.experience-container,
+.education-container {
+  margin-bottom: var(--section-margin);
 }
 
 @media (min-width: 780px) {

@@ -1,5 +1,5 @@
 import React from 'react';
-// import uniqid from "uniqid";
+import uniqid from 'uniqid';
 
 const ExperienceOutput = (props) => {
   const { experiences } = props;
@@ -8,16 +8,15 @@ const ExperienceOutput = (props) => {
     <section className="output-section">
       <h2 className="section-header">WORK EXPERIENCE</h2>
       {experiences?.map((experience) => (
-        <div key={experience.id}>
-          <Experience
-            jobTitle={experience.jobTitle}
-            companyName={experience.companyName}
-            startMonth={experience.startMonth}
-            endMonth={experience.endMonth}
-            currentJob={experience.currentJob}
-            description={experience.description}
-          />
-        </div>
+        <Experience
+          jobTitle={experience.jobTitle}
+          companyName={experience.companyName}
+          startMonth={experience.startMonth}
+          endMonth={experience.endMonth}
+          currentJob={experience.currentJob}
+          description={experience.description}
+          id={experience.id}
+        />
       ))}
     </section>
   );
@@ -28,11 +27,10 @@ const Experience = (props) => {
     jobTitle,
     companyName,
     startMonth,
-    startYear,
     endMonth,
-    endYear,
     currentJob,
     description,
+    id,
   } = props;
 
   const [yearStart, monthStart] = startMonth.split('-');
@@ -53,7 +51,7 @@ const Experience = (props) => {
   }
 
   return (
-    <div>
+    <div key={id} className="experience-container">
       <div className="date-block">
         <h3>{companyName}</h3>
         {dates}
@@ -68,7 +66,7 @@ const TextAreaWithBullets = ({ value }) => {
   const lines = value.split('\n');
 
   return (
-    <ul>
+    <ul className="accomplishment-list">
       {lines.map((line, index) => (
         <li key={index}>{line}</li>
       ))}

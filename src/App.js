@@ -119,9 +119,7 @@ class App extends Component {
   };
 
   handleSample = () => {
-    const toyMakerDescription =
-      'Design and produce a wide range of toys including dolls, stuffed animals, board games, and puzzles' +
-      '\n' +
+    const toyApprenticeDescription =
       'Use a variety of tools and equipment such as saws, drills, sanders, and sewing machines' +
       '\n' +
       'Collaborate with other elves and the workshop supervisor to meet production deadlines' +
@@ -129,6 +127,12 @@ class App extends Component {
       'Conduct quality checks on toys to ensure they meet North Pole standards' +
       '\n' +
       'Participate in the annual Christmas Eve delivery process, ensuring each child receives their desired gifts';
+    const headToyMakerDescription =
+      'Lead team of elves in the production of high-quality toys for children worldwide' +
+      '\n' +
+      'Oversee toy-making process from start to finish, ensuring all toys meet safety and quality standards' +
+      '\n' +
+      'Collaborate with design team to develop new and innovative toy concepts';
     this.setState({
       personal: {
         firstName: 'Eric',
@@ -139,16 +143,27 @@ class App extends Component {
       },
       experiences: [
         {
-          jobTitle: 'Toy Maker',
+          id: uniqid(),
+          jobTitle: 'Head Toy Maker',
           companyName: 'North Pole Workshop',
-          startMonth: '2000-01',
+          startMonth: '2002-03',
           endMonth: '2020-02',
           currentJob: true,
-          description: toyMakerDescription,
+          description: headToyMakerDescription,
+        },
+        {
+          id: uniqid(),
+          jobTitle: 'Toy Maker Apprentice',
+          companyName: 'North Pole Workshop',
+          startMonth: '2000-01',
+          endMonth: '2002-02',
+          currentJob: false,
+          description: toyApprenticeDescription,
         },
       ],
       educations: [
         {
+          id: uniqid(),
           schoolName: 'Elf School',
           program: 'B.S. in Toy Manufacturing',
           startMonth: '1996-08',
