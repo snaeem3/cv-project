@@ -46,9 +46,6 @@ class App extends Component {
   };
 
   changeExperience = (event, givenID) => {
-    console.log(event);
-    console.log(event.target.name);
-    console.log(event.target.value);
     const { experiences } = this.state;
     let experience = {};
     for (let i = 0; i < this.state.experiences.length; i++) {

@@ -9,7 +9,6 @@ const PersonalOutput = (props) => {
   return (
     <div id="personal-output-container" className="output">
       <h2 className="name">{`${personal.firstName} ${personal.lastName}`}</h2>
-      {/* <br /> */}
       <div id="contact-info-output">
         <img src={MailIcon} alt="email icon" className="icon" />
         {personal.email}

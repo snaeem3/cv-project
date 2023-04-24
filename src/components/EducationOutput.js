@@ -12,6 +12,7 @@ const EducationOutput = (props) => {
           program={education.program}
           startMonth={education.startMonth}
           endMonth={education.endMonth}
+          id={education.id}
         />
       ))}
     </section>
@@ -19,7 +20,7 @@ const EducationOutput = (props) => {
 };
 
 const Education = (props) => {
-  const { schoolName, program, startMonth, endMonth } = props;
+  const { schoolName, program, startMonth, endMonth, id } = props;
 
   const [yearStart, monthStart] = startMonth.split('-');
   const dateStart = new Date(yearStart, monthStart - 1, 1);
@@ -36,7 +37,7 @@ const Education = (props) => {
   );
 
   return (
-    <div className="education-container">
+    <div key={id} className="education-container">
       <div className="date-block">
         <h3>{schoolName}</h3>
         {dates}

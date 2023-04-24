@@ -1,5 +1,4 @@
 import React from 'react';
-import uniqid from 'uniqid';
 
 const ExperienceOutput = (props) => {
   const { experiences } = props;

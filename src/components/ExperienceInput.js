@@ -1,5 +1,4 @@
 import React, { Component } from 'react';
-import uniqid from 'uniqid';
 
 class ExperienceInput extends Component {
   render() {
@@ -42,14 +41,6 @@ class ExperienceInput extends Component {
               name="startMonth"
               placeholder="Start month"
             />
-            {/* <label htmlFor="startYear">Start year</label>
-              <input
-                onChange={(e) => changeExperience(e,experience.id)}
-                type="number"
-                id="startYear"
-                name="startYear"
-                placeholder="Start year"
-              /> */}
             <label htmlFor="endMonth">End month</label>
             <input
               onChange={(e) => changeExperience(e, experience.id)}
@@ -59,14 +50,6 @@ class ExperienceInput extends Component {
               name="endMonth"
               placeholder="End month"
             />
-            {/* <label htmlFor="endYear">End year</label>
-              <input
-                onChange={(e) => changeExperience(e,experience.id)}
-                type="number"
-                id="endYear"
-                name="endYear"
-                placeholder="End year"
-              /> */}
             <label htmlFor="currentJob">Current Job</label>
             <input
               onChange={(e) => changeExperience(e, experience.id)}
