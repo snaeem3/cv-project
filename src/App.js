@@ -1,3 +1,4 @@
+/* eslint-disable react/destructuring-assignment */
 import React, { Component } from 'react';
 import { Helmet } from 'react-helmet';
 import uniqid from 'uniqid';
@@ -24,12 +25,18 @@ class App extends Component {
   }
 
   changePersonal = (event) => {
-    const personal = { ...this.state.personal };
-    personal[event.target.name] = event.target.value;
-    this.setState({ personal });
+    const { name } = event.target;
+    const { value } = event.target;
+
+    this.setState((prevState) => {
+      const personal = { ...prevState.personal };
+      personal[name] = value;
+      return { personal };
+    });
   };
 
   addExperience = () => {
+    const { experiences } = this.state;
     const experience = {
       id: uniqid(),
       jobTitle: '',
@@ -42,7 +49,7 @@ class App extends Component {
       description: '',
     };
     this.setState({
-      experiences: [...this.state.experiences, experience],
+      experiences: [...experiences, experience],
     });
   };
 
@@ -65,12 +72,13 @@ class App extends Component {
   };
 
   handleDeleteExperience = (index) => {
-    this.setState({
-      experiences: this.state.experiences.filter((_, i) => i !== index), // Callback function returns every value but the one at the given index
-    });
+    this.setState((prevState) => ({
+      experiences: prevState.experiences.filter((_, i) => i !== index),
+    }));
   };
 
   addEducation = () => {
+    const { educations } = this.state;
     const education = {
       id: uniqid(),
       schoolName: '',
@@ -79,7 +87,7 @@ class App extends Component {
       endMonth: '',
     };
     this.setState({
-      educations: [...this.state.educations, education],
+      educations: [...educations, education],
     });
   };
 
@@ -97,8 +105,9 @@ class App extends Component {
   };
 
   handleDeleteEducation = (index) => {
+    const { educations } = this.state;
     this.setState({
-      educations: this.state.educations.filter((_, i) => i !== index), // Callback function returns every value but the one at the given index
+      educations: educations.filter((_, i) => i !== index), // Callback function returns every value but the one at the given index
     });
   };
 
