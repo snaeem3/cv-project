@@ -3,6 +3,7 @@
 ## [Live View](https://snaeem3.github.io/cv-project)
 
 This project showcases a ReactJS cv/resume builder as a part of the [Odin Project](https://www.theodinproject.com/lessons/node-path-javascript-cv-application) curriculum. Fill out each section of the form and view the outputted printable resume.
+![cv-maker](https://user-images.githubusercontent.com/11710951/234158031-01971c4c-1ef1-491f-bd67-53e1145a41d9.png)
 
 Skills involved with this project:
 
